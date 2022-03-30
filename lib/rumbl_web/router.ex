@@ -1,6 +1,6 @@
 defmodule RumblWeb.Router do
   use RumblWeb, :router
-
+  import RumblWeb.Auth, only: [authenticate_user: 2]
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -32,7 +32,7 @@ defmodule RumblWeb.Router do
   scope "/manage", RumblWeb do
     pipe_through [:browser, :authenticate_user]
 
-    resources "videos", VideoController
+    resources "/videos", VideoController
   end
 
   # Enables LiveDashboard only for development
