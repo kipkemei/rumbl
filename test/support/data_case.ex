@@ -28,11 +28,6 @@ defmodule Rumbl.DataCase do
     end
   end
 
-  @doc """
-  A setup block handles transactional tests.
-  A transactional test runs a test and rolls back any changes made during the test.
-  This transactional technique allows tests to reset the database to a known state quickly between tests.
-  """
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Rumbl.Repo)
 
