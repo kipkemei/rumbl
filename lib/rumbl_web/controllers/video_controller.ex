@@ -15,7 +15,7 @@ defmodule RumblWeb.VideoController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create_video(conn, %{"video" => video_params}, current_user) do
+  def create(conn, %{"video" => video_params}, current_user) do
     case Multimedia.create_video(current_user, video_params) do
       {:ok, video} ->
         conn
