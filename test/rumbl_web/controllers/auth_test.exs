@@ -6,4 +6,13 @@ defmodule RumblWeb.AuthTest do
     conn = Auth.authenticate_user(conn, [])
     assert conn.halted
   end
+
+  test "authenticate_user for existing current user", %{conn: conn} do
+    conn =
+      conn
+      |> assign(:current_user, %Rumbl.Accounts.User{})
+      |> Auth.authenticate_user([])
+      
+    refute conn.halted
+  end
 end
