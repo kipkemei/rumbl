@@ -1,4 +1,7 @@
 defmodule RumblWeb.UserController do
+  @moduledoc """
+  This module contains the controller actions. [index, show, new, create]
+  """
   use RumblWeb, :controller
 
   import RumblWeb.Auth, only: [authenticate_user: 2]
