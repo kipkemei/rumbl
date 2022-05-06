@@ -1,4 +1,7 @@
 defmodule RumblWeb.SessionController do
+   @moduledoc """
+  This module contains the controller actions. [delete, create]
+  """
   use RumblWeb, :controller
 
   @doc """
