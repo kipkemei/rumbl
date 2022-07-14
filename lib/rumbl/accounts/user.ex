@@ -2,7 +2,7 @@ defmodule Rumbl.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
   @moduledoc """
-  Handles all DB changes.
+  Handles all DB changes. Creates a changeset to be committed.
   """
 
   schema "users" do
